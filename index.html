@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>The Psychic Game</title>
+<script src="game.js"> </script>
+</head>
+<body>
+<h1> The Psychic Game </h1>
+
+<p>Guess What Letter I'm thinking of </p> 
+
+<p> Wins </p>
+<script type="text/javascript"> 
+
+var wins = 0;
+var losses =0;
+
+//When user guess letter is records the kepress then sets it to user press and also makes sure the number gets recorded in the console as lowercase
+documents.onkeyup = function(event) {
+		// 
+		var userGuess = String.fromCharCode(event.keyCode)
+			.toLowerCase();
+}
+
+//Test if the user guesses the right letter or not and then increments guesses left, losses, and guesses so far
+
+//Array includes everything except the right letter
+var wrongArray = ["B", "C", "D", "E"];
+
+
+if ((userGuess == 'a')) {
+	wins++;
+
+
+}
+
+</script>
+
+<p>Losses: </p>
+<p>Guesses Left: </p>
+<p> Your Guesses So Far </p>
+
+</body>
+</html>

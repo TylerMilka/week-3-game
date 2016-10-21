@@ -3,43 +3,91 @@
 <head>
 	<meta charset="UTF-8">
 	<title>The Psychic Game</title>
-<script src="game.js"> </script>
+
+		<link type="text/javascript" src="assetse/javascript/game.js"
+		<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
 </head>
 <body>
 <h1> The Psychic Game </h1>
 
-<p>Guess What Letter I'm thinking of </p> 
+<div id="game">
+<p> Guess What Letter I'm thinking of: </p>
+</div>
 
-<p> Wins </p>
+<script type="text/javascript">
+
+//Variables
+var guessLeft =5;
+var wins = 0;
+var losses = 0;
+
+//use getElementById to link HTML ids too Java file
+//array 
+
+{
+var text = " ";
+var letterBank = 
+
+	function getRandom(){
+	
+	document.myform.ltr.focus();
+	var randomLetter = letterBank.charAt(Math.floor(random() * letterBank.length));
+		return randomLetter;
+	}
+
+function getWord(){
+	var bank  = getRandom();
+
+	var quote = new Array(5);
+	quote [1]= "dime";
+	quote [2]= "dollar";
+	quote [3]= "cash";
+	quote [4]= "penny";
+
+	var answer = quote[getWord];
+
+	//hides answer
+	myform.answer.value =answer;
+}
+
+
+
+
+	
+	
+//records user keypress and sets var userGuess to that and makes sure the letter is recorded as lowercase 
+document.onkeyup = function(event) {
+	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+
+	if (userGuess === letterBank){
+		document.getElementById("wins").value = wins++;
+		alert("GOOD JOB!");
+	}else if (userGuess !== correctLetter){
+		document.getElementById("guessLeft").value = guessLeft--;
+	}
+
+
+
+
+}
+ 	
+</script>
+<p> Wins: <span id="wins"> 0 </span>
+<p> Losses: <span id="losses"> 0 </span>
+<p> Guesses Left <span id="guessLeft"> 10 </span>
+<p id="guessesSoFar"> Guesses So Far </p>
+
 <script type="text/javascript"> 
 
-var wins = 0;
-var losses =0;
-
-//When user guess letter is records the kepress then sets it to user press and also makes sure the number gets recorded in the console as lowercase
-documents.onkeyup = function(event) {
-		// 
-		var userGuess = String.fromCharCode(event.keyCode)
-			.toLowerCase();
-}
-
-//Test if the user guesses the right letter or not and then increments guesses left, losses, and guesses so far
-
-//Array includes everything except the right letter
-var wrongArray = ["B", "C", "D", "E"];
 
 
-if ((userGuess == 'a')) {
-	wins++;
 
 
-}
+
+
 
 </script>
 
-<p>Losses: </p>
-<p>Guesses Left: </p>
-<p> Your Guesses So Far </p>
 
 </body>
 </html>

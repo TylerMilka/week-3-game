@@ -1,3 +1,15 @@
-var wins = 0;
-var losses = 0;
-var guess left = 5;
+
+//Defies Variables
+var wins = $('#wins');
+var losses = $('#losses');
+var guessesLeft = $('#guessesLeft');
+var guessesSoFar = $('#guessesSoFar');
+
+
+
+var userGuess = $("document").keypress(function(event){
+	if (event.keycode == 'a'){
+		wins ++1
+	}
+	
+})

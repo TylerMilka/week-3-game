@@ -15,60 +15,23 @@
 </div>
 
 <script type="text/javascript">
-
 //Variables
 var guessLeft =5;
 var wins = 0;
 var losses = 0;
-
 //use getElementById to link HTML ids too Java file
 //array 
 
-{
-var text = " ";
-var letterBank = 
-
-	function getRandom(){
-	
-	document.myform.ltr.focus();
-	var randomLetter = letterBank.charAt(Math.floor(random() * letterBank.length));
-		return randomLetter;
-	}
-
-function getWord(){
-	var bank  = getRandom();
-
-	var quote = new Array(5);
-	quote [1]= "dime";
-	quote [2]= "dollar";
-	quote [3]= "cash";
-	quote [4]= "penny";
-
-	var answer = quote[getWord];
-
-	//hides answer
-	myform.answer.value =answer;
-}
-
-
-
-
-	
 	
 //records user keypress and sets var userGuess to that and makes sure the letter is recorded as lowercase 
 document.onkeyup = function(event) {
 	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-
 	if (userGuess === letterBank){
 		document.getElementById("wins").value = wins++;
 		alert("GOOD JOB!");
 	}else if (userGuess !== correctLetter){
 		document.getElementById("guessLeft").value = guessLeft--;
 	}
-
-
-
-
 }
  	
 </script>
@@ -76,18 +39,7 @@ document.onkeyup = function(event) {
 <p> Losses: <span id="losses"> 0 </span>
 <p> Guesses Left <span id="guessLeft"> 10 </span>
 <p id="guessesSoFar"> Guesses So Far </p>
-
 <script type="text/javascript"> 
-
-
-
-
-
-
-
-
 </script>
-
-
 </body>
 </html>

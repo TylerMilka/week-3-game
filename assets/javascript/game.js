@@ -1,15 +1,11 @@
+function getRandom(){
 
-//Defies Variables
-var wins = $('#wins');
-var losses = $('#losses');
-var guessesLeft = $('#guessesLeft');
-var guessesSoFar = $('#guessesSoFar');
+	console.log();
+	var ranLetter= Math.floor(Math.random()*27);
+	return ranLetter;
+}
 
-
-
-var userGuess = $("document").keypress(function(event){
-	if (event.keycode == 'a'){
-		wins ++1
-	}
+function getLetter(){
 	
-})
+	var letterBank = ["abcdefghijklmnopqrstuvwxyz"].split('');
+}

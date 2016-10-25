@@ -16,29 +16,42 @@
 
 <script type="text/javascript">
 //Variables
-var guessLeft =5;
-var wins = 0;
+var guessLeft = 5;
+var winTally = 0;
 var losses = 0;
+var guessesSoFar = " ";
 //use getElementById to link HTML ids too Java file
 //array 
 
+//array with all possible letter choices. Random letter will dray from this and it will also serve as all the possible guess choicse 
+var letterChoices= ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];	
+
+	// randomly selects a letter from the array above which will serve as the correct the user is trying to guess 
+document.onkeyup = function keypress(event) {
+	var correctLetter= letterChoices[Math.floor(Math.random() * letterChoices.length)];
 	
-//records user keypress and sets var userGuess to that and makes sure the letter is recorded as lowercase 
-document.onkeyup = function(event) {
+	//records user keypress and sets var userGuess to that and makes sure the letter is recorded as lowercase 
 	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-	if (userGuess === letterBank){
-		document.getElementById("wins").value = wins++;
-		alert("GOOD JOB!");
-	}else if (userGuess !== correctLetter){
-		document.getElementById("guessLeft").value = guessLeft--;
-	}
+	var guessesSoFar = String.fromCharCode(event.keyCode).toLowerCase();
+
+if (userGuess !== correctLetter){	
+		document.getElementById("guessLeft").innerHTML = guessLeft--;
+		document.getElementById("guessesSoFar").innerHTML = guessesSoFar + "";
+}else if (userGuess === correctLetter){
+		document.getElementById("winTally").innerHTML = winTally +1;
+}
+
+if (guessLeft === 0){
+		document.getElementById("losses").innerHTML = losses +1;
+		document.getElementById("guessLeft").innerHTML = guessLeft +5;
+}
 }
  	
 </script>
-<p> Wins: <span id="wins"> 0 </span>
-<p> Losses: <span id="losses"> 0 </span>
-<p> Guesses Left <span id="guessLeft"> 10 </span>
-<p id="guessesSoFar"> Guesses So Far </p>
+<p> Wins: <span id="winTally"> 0 </span> </p>
+<p> Losses: <span id="losses"> 0 </span> </p>
+<p> Guesses Left: <span id="guessLeft"> 5 </span> </p>
+<p id="guessesSoFar"> Guesses So Far <span id="guessesSoFar"></span> </p>
 <script type="text/javascript"> 
 </script>
 </body>
